@@ -36,6 +36,10 @@ exports.acceptDeal = async (req, res) => {
         }
 
         deal.status = 'accepted';
+
+// 5 days timer (you can change)
+        deal.expiresAt = new Date(Date.now() + 5 * 24 * 60 * 60 * 1000);
+
         await deal.save();
 
         res.json(deal);
