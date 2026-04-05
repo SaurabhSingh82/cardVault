@@ -18,8 +18,11 @@ const dealSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ['pending', 'accepted', 'completed', 'disputed'],
+        enum: ['pending', 'accepted', 'completed', 'disputed','refunded'],
         default: 'pending'
+    },
+    expiresAt: {
+    type: Date
     }
 }, { timestamps: true });
 
