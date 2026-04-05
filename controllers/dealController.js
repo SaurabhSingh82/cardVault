@@ -72,7 +72,10 @@ exports.revealCard = async (req, res) => {
         }
 
         // Decrypt details
-        
+        const decryptedData = {
+            cardNumber: decrypt(card.cardNumber),
+            pin: decrypt(card.pin)
+        };
 
         res.json(decryptedData);
 
